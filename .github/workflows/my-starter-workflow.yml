@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  my_first_job:
   build:
     runs-on: ubuntu-latest
     
@@ -16,3 +17,8 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy to your project.
           
+  my_second_job:
+      name: call-reusable-workflow:
+  uses: ./.github/workflows/reusable-workflow.yml
+  with:
+    node: 14   
