@@ -3,22 +3,15 @@ name: My Starter Workflow
 on:
   workflow_dispatch:
 
-jobs:
-  my_first_job:
+jobs:call-reusable-workflow:
   build:
     runs-on: ubuntu-latest
     
     steps:
     
-      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/reusable-workflow.yml
       
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
           echo test, and deploy to your project.
-          
-  my_second_job:
-      name: call-reusable-workflow:
-  uses: ./.github/workflows/reusable-workflow.yml
-  with:
-    node: 14   
